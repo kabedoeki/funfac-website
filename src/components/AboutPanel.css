@@ -1,0 +1,117 @@
+.about-panel__accent-bar {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--text) 0%,
+    var(--text) 24%,
+    transparent 24%
+  );
+}
+
+.about-panel__body {
+  padding: 26px 32px 20px;
+}
+
+.about-panel__heading {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.about-panel__warning {
+  background: var(--accent);
+  border-radius: 6px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.about-panel__warning-icon {
+  min-width: 60px;
+  height: 12px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(
+    115deg,
+    var(--accent-contrast) 0 4px,
+    transparent 4px 9px
+  );
+}
+
+.about-panel__warning-text {
+  color: var(--accent-contrast);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-panel__logo {
+  background: var(--surface);
+  border-radius: 8px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.about-panel__columns {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 36px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.about-panel__column-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.about-panel__text {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0 0 22px;
+}
+
+.about-panel__text--emphasis {
+  color: var(--tag-text);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.about-panel__credits-intro {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.about-panel__credits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.about-panel__credits-item {
+  padding: 11px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.about-panel__corner {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}

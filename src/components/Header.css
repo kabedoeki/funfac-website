@@ -1,0 +1,49 @@
+.header {
+  max-width: 1600px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.header__icons {
+  display: flex;
+  gap: 10px;
+}
+
+.header__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
