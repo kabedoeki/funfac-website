@@ -1,4 +1,5 @@
 import './AboutPanel.css'
+import WarningBanner from './WarningBanner.tsx'
 
 const CREDITS = [
   'LiLaiRa',
@@ -16,18 +17,12 @@ const CORNER_DOTS = 9
 
 export default function AboutPanel() {
   return (
-    <section className="panel">
+    <section className="panel about-panel">
       <div className="about-panel__accent-bar" />
       <div className="about-panel__body">
         <h2 className="about-panel__heading">About F.U.N. Facility</h2>
 
-        <div className="about-panel__warning" role="alert">
-          <div className="about-panel__warning-icon" aria-hidden="true" />
-          <p className="about-panel__warning-text">
-            CONTAINS ADULT CONTENT AROUND SEX, GORE, EXPERIMENTATION, ETC.{' '}
-            <u>DO NOT ENGAGE IF YOU'RE A MINOR/UNCOMFORTABLE.</u>
-          </p>
-        </div>
+        <WarningBanner className="about-panel__warning" />
 
         <div className="about-panel__logo placeholder-art">
           <svg

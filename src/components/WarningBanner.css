@@ -1,0 +1,27 @@
+.warning-banner {
+  background: var(--accent);
+  border-radius: 6px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.warning-banner__icon {
+  min-width: 60px;
+  height: 12px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(
+    115deg,
+    var(--accent-contrast) 0 4px,
+    transparent 4px 9px
+  );
+}
+
+.warning-banner__text {
+  color: var(--accent-contrast);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}

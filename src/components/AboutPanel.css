@@ -19,32 +19,13 @@
 }
 
 .about-panel__warning {
-  background: var(--accent);
-  border-radius: 6px;
-  padding: 13px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-bottom: 18px;
 }
 
-.about-panel__warning-icon {
-  min-width: 60px;
-  height: 12px;
-  flex-shrink: 0;
-  background: repeating-linear-gradient(
-    115deg,
-    var(--accent-contrast) 0 4px,
-    transparent 4px 9px
-  );
-}
-
-.about-panel__warning-text {
-  color: var(--accent-contrast);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin: 0;
+.warning-banner.about-panel__warning {
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .about-panel__logo {

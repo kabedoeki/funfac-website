@@ -47,7 +47,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-bottom: 28px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -94,6 +93,7 @@
   border-radius: 8px;
   overflow: hidden;
   background: var(--surface);
+  margin-bottom: 28px;
 }
 
 .quick-access-panel__post-preview {

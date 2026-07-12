@@ -19,3 +19,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+.warning-banner.landing__mobile-warning {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    order: -1;
+  }
+}
+
+.quick-access-panel {
+  @media (max-width: 1024px) {
+    order: 0;
+  }
+}
+
+.about-panel {
+  @media (max-width: 1024px) {
+    order: 1;
+  }
+}
