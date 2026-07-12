@@ -8,7 +8,11 @@ const HEADER_ACTIONS = [
   { glyph: '☺', label: 'Mood Toggle' },
 ] as const
 
-export default function Header() {
+interface HeaderProps {
+  title?: string
+}
+
+export default function Header({ title = 'WELCOME, VISITOR.' }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const actionsRef = useRef<HTMLDivElement>(null)
@@ -71,7 +75,7 @@ export default function Header() {
             </text>
           </svg>
         </div>
-        <h1 className="header__title">WELCOME, VISITOR.</h1>
+        <h1 className="header__title">{title}</h1>
       </div>
 
       <button

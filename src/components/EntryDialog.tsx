@@ -20,23 +20,6 @@ function markEntryDialogSeen() {
   }
 }
 
-function Scribble({ mirrored }: { mirrored?: boolean }) {
-  return (
-    <svg
-      className="entry-dialog__scribble"
-      style={mirrored ? { transform: "scaleX(-1)" } : undefined}
-      width="26"
-      height="32"
-      viewBox="0 0 26 32"
-      aria-hidden="true"
-    >
-      <path d="M4 3 L1 14" />
-      <path d="M12 0 L9 16" />
-      <path d="M20 4 L16 17" />
-    </svg>
-  );
-}
-
 export default function EntryDialog() {
   const [isOpen, setIsOpen] = useState(() => !hasSeenEntryDialog());
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -164,9 +147,7 @@ export default function EntryDialog() {
               </strong>
             </p>
             <p className="entry-dialog__callout-emphasis">
-              <Scribble />
               <u>YOUR HYPERFIXATION IS NOT OUR RESPONSIBILITY.</u>
-              <Scribble mirrored />
             </p>
           </div>
         </div>

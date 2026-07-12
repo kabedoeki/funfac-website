@@ -1,11 +1,13 @@
+import { Link } from "react-router";
 import "./QuickAccessPanel.css";
 
 interface NavItem {
   label: string;
+  to?: string;
 }
 
 const NAV_TOP: readonly NavItem[] = [
-  { label: "EVERYTHING DR. MORPHINE" },
+  { label: "EVERYTHING DR. MORPHINE", to: "/characters/dr-morphine" },
   { label: "CHRONOLOGICAL" },
 ];
 
@@ -94,21 +96,36 @@ export default function QuickAccessPanel() {
           </div>
 
           <div className="quick-access-panel__nav-top">
-            {NAV_TOP.map(({ label }) => (
-              <a
-                className="quick-access-panel__nav-tile placeholder-art"
-                href="#"
-                key={label}
-              >
-                <div
-                  className="quick-access-panel__nav-tile-overlay"
-                  aria-hidden="true"
-                />
-                <span className="quick-access-panel__nav-tile-label">
-                  {label}
-                </span>
-              </a>
-            ))}
+            {NAV_TOP.map(({ label, to }) => {
+              const content = (
+                <>
+                  <div
+                    className="quick-access-panel__nav-tile-overlay"
+                    aria-hidden="true"
+                  />
+                  <span className="quick-access-panel__nav-tile-label">
+                    {label}
+                  </span>
+                </>
+              );
+              return to ? (
+                <Link
+                  className="quick-access-panel__nav-tile placeholder-art"
+                  to={to}
+                  key={label}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <a
+                  className="quick-access-panel__nav-tile placeholder-art"
+                  href="#"
+                  key={label}
+                >
+                  {content}
+                </a>
+              );
+            })}
           </div>
 
           <div className="quick-access-panel__nav-bottom">
