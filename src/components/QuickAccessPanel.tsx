@@ -1,4 +1,8 @@
 import { Link } from "react-router";
+import {
+  FIRST_CHAPTER_ID,
+  LATEST_CHAPTER_ID,
+} from "../data/comicPages.ts";
 import "./QuickAccessPanel.css";
 
 interface NavItem {
@@ -38,9 +42,12 @@ export default function QuickAccessPanel() {
 
         <div className="quick-access-panel__section-header">
           <h3 className="quick-access-panel__section-heading">Most Recent</h3>
-          <a className="quick-access-panel__section-link" href="#">
+          <Link
+            className="quick-access-panel__section-link"
+            to={`/comics/${FIRST_CHAPTER_ID}`}
+          >
             See From Beginning ↗
-          </a>
+          </Link>
         </div>
 
         <article className="quick-access-panel__post">
@@ -64,7 +71,7 @@ export default function QuickAccessPanel() {
             <p className="quick-access-panel__post-description">
               {RECENT_POST.description}
             </p>
-            <a href="#">Read More ↗</a>
+            <Link to={`/comics/${LATEST_CHAPTER_ID}`}>Read More ↗</Link>
 
             <div className="quick-access-panel__post-footer">
               <div

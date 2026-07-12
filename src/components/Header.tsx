@@ -10,9 +10,13 @@ const HEADER_ACTIONS = [
 
 interface HeaderProps {
   title?: string
+  minimal?: boolean
 }
 
-export default function Header({ title = 'WELCOME, VISITOR.' }: HeaderProps) {
+export default function Header({
+  title = 'WELCOME, VISITOR.',
+  minimal = false,
+}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const actionsRef = useRef<HTMLDivElement>(null)
@@ -75,41 +79,45 @@ export default function Header({ title = 'WELCOME, VISITOR.' }: HeaderProps) {
             </text>
           </svg>
         </div>
-        <h1 className="header__title">{title}</h1>
+        {!minimal && <h1 className="header__title">{title}</h1>}
       </div>
 
-      <button
-        type="button"
-        className="header__menu-toggle"
-        aria-expanded={isMenuOpen}
-        aria-controls="header-actions"
-        aria-haspopup="true"
-        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        ref={toggleRef}
-        onClick={() => setIsMenuOpen((open) => !open)}
-      >
-        {isMenuOpen ? '✕' : '☰'}
-      </button>
-
-      <div
-        className={`header__actions${isMenuOpen ? ' header__actions--open' : ''}`}
-        id="header-actions"
-        ref={actionsRef}
-      >
-        {HEADER_ACTIONS.map(({ glyph, label }, index) => (
+      {!minimal && (
+        <>
           <button
             type="button"
-            className="header__action"
-            key={label}
-            ref={index === 0 ? firstActionRef : undefined}
+            className="header__menu-toggle"
+            aria-expanded={isMenuOpen}
+            aria-controls="header-actions"
+            aria-haspopup="true"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            ref={toggleRef}
+            onClick={() => setIsMenuOpen((open) => !open)}
           >
-            <span className="header__action-glyph" aria-hidden="true">
-              {glyph}
-            </span>
-            <span className="header__action-label">{label}</span>
+            {isMenuOpen ? '✕' : '☰'}
           </button>
-        ))}
-      </div>
+
+          <div
+            className={`header__actions${isMenuOpen ? ' header__actions--open' : ''}`}
+            id="header-actions"
+            ref={actionsRef}
+          >
+            {HEADER_ACTIONS.map(({ glyph, label }, index) => (
+              <button
+                type="button"
+                className="header__action"
+                key={label}
+                ref={index === 0 ? firstActionRef : undefined}
+              >
+                <span className="header__action-glyph" aria-hidden="true">
+                  {glyph}
+                </span>
+                <span className="header__action-label">{label}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
     </header>
   )
 }

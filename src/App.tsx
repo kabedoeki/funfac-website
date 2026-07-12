@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import Layout from './Layout.tsx'
 import LandingPage from './pages/LandingPage.tsx'
 import CharacterBioPage from './pages/CharacterBioPage.tsx'
+import ComicReaderPage from './pages/ComicReaderPage.tsx'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
             path="characters/dr-morphine"
             element={<CharacterBioPage />}
           />
+          <Route path="comics" element={<ComicReaderPage />} />
+          <Route path="comics/:chapterId" element={<ComicReaderPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
